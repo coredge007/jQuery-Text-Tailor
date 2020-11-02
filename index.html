@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="lib/jquery-text-tailor.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/jquery-text-tailor.css">
+    <style type="text/css">
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, form, fieldset, p, button, canvas, figure { margin: 0; padding: 0; }
+        body { background-color: #fff; *word-break: break-all; -ms-word-break: break-all; }
+        .example header {position:relative;width:590px;height:300px; margin:0 auto;background:red; }
+        .example header h1 {position:absolute; top: 0; left:0px; width:530px; padding:30px; color:#fff; font-size:40px; text-shadow: 3px 3px #000;text-decoration-style: wavy;}
+        .example header h2 {position:absolute; top: 107px; left:30px; width:470px; padding:30px; background:#fff;color:#333; font-size:20px;border-radius: 5px; text-align:center;}
+        .example header p {position:absolute; bottom:0px; left:0px; width:530px; padding: 0 30px;padding:30px; color:#fff;} 
+        .example .container main {margin:30px auto 200px;width:590px;}
+        .example .container main section h3 {font-size:14px;font-weight:400;}
+        .example .container main section p {padding:10px;margin-top:10px;margin-bottom:50px;border:1px solid #ccc;font-size:12px;font-weight:400;background:#eee;border-radius:10px;}
+        .example [data-text-tailor] a {color:#777; text-decoration: none;}
+    </style>
+<title>jQuery Text Tailor</title> 
+</head>
+<body class="example">
+    <header>
+        <h1>jQuery Text Tailor</h1>
+        <h2>handling text overflow (jQuery plugin)</h2>
+        <p>           
+            All you have to do is import files and add data attribute to html elements and execute a javascript function.
+            <br/>
+            * Notice : this plugin do not response to window resize event.
+        </p>
+    </header>
+    <div class="container">
+        <div class="contents">
+            <main role="main">
+                <section>
+                    <h3>Normal Text</h3>
+                    <p>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>Tailored Text</h3>
+                    <p data-text-tailor>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>option : {transform:"***",lines:"3"}</h3>
+                    <p data-text-tailor='{"transform":"***","lines":"3"}'>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>option : {"transform":"☆☆☆","lines":"4"}</h3>
+                    <p data-text-tailor='{"transform":"☆☆☆","lines":"4"}'>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>option : {"transform":"♡♡♡","lines":"5"}</h3>
+                    <p data-text-tailor='{"transform":"♡♡♡","lines":"5"}'>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>option : {"transform":"...viewMore▷","lines":"3","href":"http://www.google.com"}</h3>
+                    <p data-text-tailor='{"transform":"...viewMore▷","lines":"3","href":"http://www.google.com"}'>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>
+                    <h3>option : {"transform":"...viewMore▷","lines":"3","href":"http://www.google.com","target":"_blank"}</h3>
+                    <p data-text-tailor='{"transform":"...viewMore▷","lines":"3","href":"http://www.google.com","target":"_blank"}'>
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    </p>              
+                </section>
+            </main>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function initPage($) {
+
+            textTailor.init({
+                transform: '...',
+                lines: 2
+            });
+
+        }).apply(this, [jQuery]);
+    </script>
+</body> 
+</html>
